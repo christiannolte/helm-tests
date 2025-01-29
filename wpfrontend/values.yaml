@@ -1,6 +1,6 @@
 
 image:
   name: wordpress
-  tag: php8.3-fpm-alpine
+  tag: latest
 
 port: 80
