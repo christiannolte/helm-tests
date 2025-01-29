@@ -1,4 +1,4 @@
-replicas : 5
+replicas : 3
 namespace: frontend
 image:
   name: wordpress
