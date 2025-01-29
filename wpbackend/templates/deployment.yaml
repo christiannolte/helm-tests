@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wb-database-deployment
+  namespace: backend
+  labels:
+    app: wp-database
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: wp-database
+  template:
+    metadata:
+      name: wp-database
+      namespace: backend
+      labels:
+        app: wp-database
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              value: "verySecret"
+            - name: MARIADB_DATABASE
+              value: "wp"
+            - name: MARIADB_USER
+              value: "wp"
+            - name: MARIADB_PASSWORD
+              value: "secretWp"
