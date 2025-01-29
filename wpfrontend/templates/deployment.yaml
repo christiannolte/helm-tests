@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wb-web-deployment
+  namespace: frontend
+  labels:
+    app: wp-web
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 50%
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: wp-web
+  template:
+    metadata:
+      labels:
+        app: wp-web
+    spec:
+      containers:
+        - name: web
+          image: wordpress:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: "wp-database.backend"
+            - name: WORDPRESS_DB_NAME
+              value: "wp"
+            - name: WORDPRESS_DB_USER
+              value: "wp"
+            - name: WORDPRESS_DB_PASSWORD
+              value: "secretWp"
+              

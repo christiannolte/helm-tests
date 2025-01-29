@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wp-external
+  namespace: frontend
+spec:
+  type: NodePort #Auskommentieren für den Einsatz mit Traefik
+  selector:
+    app: wp-web
+  ports:
+    - protocol: TCP
+      nodePort: 30001 #Auskommentieren für den Einsatz mit Traefik
+      port: 80
+      targetPort: 80
+      
