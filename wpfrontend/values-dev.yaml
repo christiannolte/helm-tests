@@ -1,3 +1,4 @@
+replicas : 7
 namespace: frontend-dev
 dbhost: "wp-database.backend-dev"
 nodeport: 30002
