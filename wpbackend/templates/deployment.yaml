@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wb-database-deployment
-  namespace: backend
+  namespace: {{ .Values.namespace }}
   labels:
     app: wp-database
 spec:
@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       name: wp-database
-      namespace: backend
+      namespace: {{ .Values.namespace }}
       labels:
         app: wp-database
     spec:
