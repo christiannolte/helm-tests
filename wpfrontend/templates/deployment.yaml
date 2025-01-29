@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: {{ .Values.image.name }}:{{ .Values.image.version }}
+          image: {{ .Values.image.name }}:{{ .Values.image.tag }}
           ports:
             - containerPort: {{ .Values.port }}
           readinessProbe:
