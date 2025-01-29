@@ -1,4 +1,4 @@
-
+replicas : 5
 image:
   name: wordpress
   tag: latest
