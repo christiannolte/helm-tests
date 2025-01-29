@@ -33,6 +33,16 @@ spec:
             tcpSocket:
               port: {{ .Values.port }}
             timeoutSeconds: 1
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: {{ .Values.port }}
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
           env:
             - name: WORDPRESS_DB_HOST
               value: "wp-database.backend"
