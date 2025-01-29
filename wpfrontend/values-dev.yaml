@@ -1,7 +1,7 @@
 replicas : 5
-namespace: frontend
+namespace: frontend-dev
 image:
   name: wordpress
   tag: latest
 port: 80
-dbhost: "wp-database.backend"
+dbhost: "wp-database.backend-dev"
