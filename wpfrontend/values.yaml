@@ -5,3 +5,4 @@ image:
   tag: latest
 port: 80
 dbhost: "wp-database.backend"
+nodeport: 30001

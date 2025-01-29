@@ -9,7 +9,7 @@ spec:
     app: wp-web
   ports:
     - protocol: TCP
-      nodePort: 30001
+      nodePort: {{ .Values.nodeport }}
       port: {{ .Values.port }}
       targetPort: {{ .Values.port }}
       
