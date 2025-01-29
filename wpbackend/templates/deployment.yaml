@@ -21,9 +21,9 @@ spec:
     spec:
       containers:
         - name: mariadb
-          image: mariadb
+          image: {{ .Values.image  }}
           ports:
-            - containerPort: 3306
+            - containerPort: {{ .Values.port }}
           env:
             - name: MARIADB_ROOT_PASSWORD
               value: "verySecret"

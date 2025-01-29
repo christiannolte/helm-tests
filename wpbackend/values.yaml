@@ -1,1 +1,2 @@
-
+image: mariadb
+port: 3306
