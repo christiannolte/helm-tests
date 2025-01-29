@@ -22,16 +22,16 @@ spec:
     spec:
       containers:
         - name: web
-          image: wordpress:latest
+          image: {{ .image.name }}:{{ .image.version }}
           ports:
-            - containerPort: 80
+            - containerPort: {{ .port }}
           readinessProbe:
             failureThreshold: 3
             initialDelaySeconds: 30
             periodSeconds: 10
             successThreshold: 1
             tcpSocket:
-              port: 80
+              port: {{ .port }}
             timeoutSeconds: 1
           env:
             - name: WORDPRESS_DB_HOST

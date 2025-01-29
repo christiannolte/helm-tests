@@ -1,1 +1,6 @@
 
+image:
+  name: wordpress
+  tag: latest
+
+port: 80

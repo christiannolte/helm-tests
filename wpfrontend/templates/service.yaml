@@ -4,12 +4,12 @@ metadata:
   name: wp-external
   namespace: frontend
 spec:
-  type: NodePort #Auskommentieren für den Einsatz mit Traefik
+  type: NodePort 
   selector:
     app: wp-web
   ports:
     - protocol: TCP
-      nodePort: 30002 #Auskommentieren für den Einsatz mit Traefik
-      port: 80
-      targetPort: 80
+      nodePort: 30002 
+      port: {{ .port }}
+      targetPort: {{ .port }}
       
