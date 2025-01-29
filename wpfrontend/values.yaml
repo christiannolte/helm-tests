@@ -6,3 +6,4 @@ image:
 port: 80
 dbhost: "wp-database.backend"
 nodeport: 30001
+deploymentname: wb-web-deployment
