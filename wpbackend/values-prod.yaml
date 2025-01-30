@@ -1,0 +1,2 @@
+namespace: backend-prod
+deploymentname: wb-database-deployment-prod
