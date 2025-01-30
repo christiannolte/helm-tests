@@ -2,7 +2,7 @@ replicas : 3
 namespace: frontend
 image:
   name: wordpress
-  tag: php8.3-fpm-alpine
+  tag: latest
 port: 80
 dbhost: "wp-database.backend"
 nodeport: 30001
