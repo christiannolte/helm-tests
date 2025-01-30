@@ -2,3 +2,4 @@ namespace: backend
 image: mariadb
 port: 3306
 deploymentname: wb-database-deployment
+imagePullPolicy: IfNotPresent

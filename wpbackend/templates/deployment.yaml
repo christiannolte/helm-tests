@@ -22,6 +22,7 @@ spec:
       containers:
         - name: mariadb
           image: {{ .Values.image  }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
           ports:
             - containerPort: {{ .Values.port }}
           env:
