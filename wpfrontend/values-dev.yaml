@@ -2,3 +2,4 @@ namespace: frontend-dev
 dbhost: "wp-database.backend-dev"
 nodeport: 30002
 deploymentname: wb-web-deployment-dev
+imagePullPolicy: Always
